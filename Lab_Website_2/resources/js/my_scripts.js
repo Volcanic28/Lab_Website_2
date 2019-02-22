@@ -94,68 +94,12 @@ function loadStatsPage() {
 						
 						4. Update the second table to show the total number of wins/losses for the Buffs.
 */
-/*
-	players is an array to hold each player's information.
-	Fields:
-		name - Football player's name
-		img  - The relative/absolute path to the image file.
-		alt  - The alternative text that describes the image.
-		year - The student's year in college (Freshman, Sophomore, Junior, Senior).
-		major- The student's current college major.
-		games_played    - The number of football games the student has played for the Buffs.
-		pass_yards      - The total number of passing yards in the student's football career for the Buffs.
-		rushing_yards   - The total number of rushing yards in the student's football career for the Buffs.
-		receiving_yards - The total number of receiving yards in the student's football career for the Buffs.
-*/
 
-function switchPlayers(playerNum) {
-	document.getElementById("p_year").innerHTML = players[playerNum].year;
-	document.getElementById("p_major").innerHTML = players[playerNum].major;
-	document.getElementById("g_played").innerHTML = players[playerNum].games_played;
-	document.getElementById("player_img").src = players[playerNum].img;
-	document.getElementById("player_img").alt = players[playerNum].alt;
-	document.getElementById("p_yards").innerHTML = players[playerNum].pass_yards;
-	document.getElementById("r_yards").innerHTML = players[playerNum].rushing_yards;
-	document.getElementById("rec_yards").innerHTML = players[playerNum].receiving_yards;
-	document.getElementById("avg_p_yards").innerHTML = (players[playerNum].pass_yards/players[playerNum].games_played).toFixed(2);
-	document.getElementById("avg_r_yards").innerHTML = (players[playerNum].rushing_yards/players[playerNum].games_played).toFixed(2);
-	document.getElementById("avg_rec_yards").innerHTML = (players[playerNum].receiving_yards/players[playerNum].games_played).toFixed(2);
-}
-
-/*
-Span ids:
-					p_year     - the player's year in college
-					p_major    - the player's major in college
-					g_played   - the number of games played for Buffs
-					player_img - the player's photo (must set src and alt)
-					p_yards    - the number of passing yards
-					r_yards    - the number of rushing yards
-					rec_yards  - the number of receiving yards
-					
-					Calculated values:
-					  avg_p_yards   - the average number of passing yards for the player's Buff career
-					  avg_r_yards   - the average number of rushing yards for the player's Buff career
-					  avg_rec_yards - the average number of receiving yards for the player's Buff career
-*/
 function loadPlayersPage() {
 	for (var n = 0; n < players.length; n++) {
 		document.getElementById("player_selector").innerHTML += "<a href='#' onclick = 'switchPlayers(" + n + ")'>" + players[n].name + "</a><br>";
 	}
 }
-
-/*
-	players is an array to hold each player's information.
-	Fields:
-		name - Football player's name
-		img  - The relative/absolute path to the image file.
-		alt  - The alternative text that describes the image.
-		year - The student's year in college (Freshman, Sophomore, Junior, Senior).
-		major- The student's current college major.
-		games_played    - The number of football games the student has played for the Buffs.
-		pass_yards      - The total number of passing yards in the student's football career for the Buffs.
-		rushing_yards   - The total number of rushing yards in the student's football career for the Buffs.
-		receiving_yards - The total number of receiving yards in the student's football career for the Buffs.
-*/
 
 /*
 	Football Player Information Page
@@ -175,9 +119,23 @@ function loadPlayersPage() {
 						4. Set the anchor tag's text to the player's name.
 						
 					After setting all of the anchor tags, update the innerHTML of the dropdown menu.
-					As a note, the id for the dropdown menu is player_selector.
-		
-		switchPlayers(playerNum) method:
+					As a note, the id for the dropdown menu is player_selector.*/
+
+function switchPlayers(playerNum) {
+	document.getElementById("p_year").innerHTML = players[playerNum].year;
+	document.getElementById("p_major").innerHTML = players[playerNum].major;
+	document.getElementById("g_played").innerHTML = players[playerNum].games_played;
+	document.getElementById("player_img").src = players[playerNum].img;
+	document.getElementById("player_img").alt = players[playerNum].alt;
+	document.getElementById("p_yards").innerHTML = players[playerNum].pass_yards;
+	document.getElementById("r_yards").innerHTML = players[playerNum].rushing_yards;
+	document.getElementById("rec_yards").innerHTML = players[playerNum].receiving_yards;
+	document.getElementById("avg_p_yards").innerHTML = (players[playerNum].pass_yards/players[playerNum].games_played).toFixed(2);
+	document.getElementById("avg_r_yards").innerHTML = (players[playerNum].rushing_yards/players[playerNum].games_played).toFixed(2);
+	document.getElementById("avg_rec_yards").innerHTML = (players[playerNum].receiving_yards/players[playerNum].games_played).toFixed(2);
+}
+
+/*		switchPlayers(playerNum) method:
 			parameters: 
 				playerNum - The index of the football player in the players array.
 			
